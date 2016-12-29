@@ -8,6 +8,9 @@ fpath = os.path.realpath(sys.argv[1])
 cdir = os.path.dirname(fpath)
 hdir = os.path.expanduser("~")
 
+if hdir.starswith('/u/'): # this is UTCS
+  sys.exit()
+
 rcfiles = []
 
 while True:
