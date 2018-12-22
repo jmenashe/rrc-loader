@@ -8,7 +8,7 @@ fpath = os.path.realpath(sys.argv[1])
 cdir = os.path.dirname(fpath)
 hdir = os.path.expanduser("~")
 
-if hdir.starswith('/u/'): # this is UTCS
+if hdir.startswith('/u/'): # this is UTCS
   sys.exit()
 
 rcfiles = []
@@ -23,7 +23,7 @@ while True:
     print("----------------")
   if cdir == hdir or os.path.dirname(cdir) == cdir: break
   cdir = os.path.dirname(cdir)
-  if rcfile == fpath: continue
+  if rcfile == '~/.vimrc': continue
   if os.path.exists(rcfile):
     rcfiles.append(rcfile)
 
